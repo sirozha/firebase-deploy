@@ -1,4 +1,4 @@
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode, importProvidersFrom, isDevMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import {
@@ -25,6 +25,9 @@ import {
   getRemoteConfig,
   provideRemoteConfig,
 } from '@angular/fire/remote-config';
+import { provideStore } from '@ngrx/store';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideEffects } from '@ngrx/effects';
 
 if (environment.production) {
   enableProdMode();
@@ -47,5 +50,8 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(provideMessaging(() => getMessaging())),
     importProvidersFrom(provideStorage(() => getStorage())),
     importProvidersFrom(provideRemoteConfig(() => getRemoteConfig())),
+    provideStore(),
+    provideEffects(),
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 });
