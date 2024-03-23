@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "aillusion-of": {
+      "hosting": {
+        "app": [
+          "aillusion-of"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "aillusion-of"
+  }
+}
