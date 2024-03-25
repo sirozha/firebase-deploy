@@ -15,6 +15,7 @@ import {
   IonItem,
   IonInput,
   IonButton,
+  IonIcon,
   IonGrid,
   IonRow,
   IonCol,
@@ -29,6 +30,7 @@ import { getFirebaseErrorMessage } from 'src/app/models/firebase-error.model';
 import { AuthTeaserComponent } from '../../components/auth-teaser/auth-teaser.component';
 import { AuthSliderComponent } from '../../components/auth-slider/auth-slider.component';
 import { RouterLink } from '@angular/router';
+import { AuthSocialsComponent } from '../../components/auth-socials/auth-socials.component';
 
 @Component({
   selector: 'app-sign-in',
@@ -46,9 +48,11 @@ import { RouterLink } from '@angular/router';
     IonToolbar,
     IonInput,
     IonButton,
+    IonIcon,
     CommonModule,
     ReactiveFormsModule,
     RouterLink,
+    AuthSocialsComponent,
     AuthTeaserComponent,
     AuthSliderComponent,
   ],
