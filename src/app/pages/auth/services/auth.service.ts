@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import {
   Auth,
   GoogleAuthProvider,
+  TwitterAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -22,6 +23,14 @@ export class AuthService {
 
   signInWithGoogle() {
     const provider = new GoogleAuthProvider();
+    provider.addScope('profile');
+    provider.addScope('email');
+
+    return signInWithPopup(this.auth, provider);
+  }
+
+  signInWithTwitter() {
+    const provider = new TwitterAuthProvider();
     provider.addScope('profile');
     provider.addScope('email');
 
