@@ -28,6 +28,8 @@ import {
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
+import { metaReducers, reducers } from './app/store/reducers';
+import { AuthEffects } from './app/pages/auth/store/auth.effects';
 
 if (environment.production) {
   enableProdMode();
@@ -50,8 +52,8 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(provideMessaging(() => getMessaging())),
     importProvidersFrom(provideStorage(() => getStorage())),
     importProvidersFrom(provideRemoteConfig(() => getRemoteConfig())),
-    provideStore(),
-    provideEffects(),
+    provideStore(reducers, { metaReducers }),
+    provideEffects(AuthEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 });

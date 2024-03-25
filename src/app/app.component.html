@@ -1,6 +1,11 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay" class="menu">
+    <ion-menu
+      contentId="main-content"
+      type="overlay"
+      [disabled]="!user()"
+      class="menu"
+    >
       <ion-content>
         <ion-list>
           <ion-list-header>
@@ -23,8 +28,21 @@
               button
               class="menu-item"
             >
-              <ion-icon slot="start" [icon]="page.icon + '-outline'"></ion-icon>
+              <ion-icon slot="start" [name]="page.icon + '-outline'"></ion-icon>
               <ion-label>{{ page.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item
+              (click)="signOut()"
+              lines="none"
+              detail="false"
+              button
+              class="menu-item"
+            >
+              <ion-icon slot="start" name="log-out-outline"></ion-icon>
+              <ion-label>Logout</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
