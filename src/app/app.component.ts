@@ -48,6 +48,8 @@ import { pages } from './models/page.model';
   ],
 })
 export class AppComponent {
+  // user: Signal<User | null>;
+
   pages = pages;
 
   constructor() {

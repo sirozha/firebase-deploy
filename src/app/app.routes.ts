@@ -22,13 +22,17 @@ export const routes: Routes = [
   {
     path: 'sign-in',
     loadComponent: () =>
-      import('./pages/auth/sign-in/sign-in.page').then((m) => m.SignInPage),
+      import('./pages/auth/pages/sign-in/sign-in.page').then(
+        (m) => m.SignInPage
+      ),
     ...canActivate(redirectLoggedInToHome),
   },
   {
     path: 'sign-up',
     loadComponent: () =>
-      import('./pages/auth/sign-up/sign-up.page').then((m) => m.SignUpPage),
+      import('./pages/auth/pages/sign-up/sign-up.page').then(
+        (m) => m.SignUpPage
+      ),
     ...canActivate(redirectLoggedInToHome),
   },
   {
