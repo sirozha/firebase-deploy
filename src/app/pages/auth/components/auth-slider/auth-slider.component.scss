@@ -1,3 +1,17 @@
+@import '../../../../../assets/scss/breakpoints.scss';
+
 :host {
   display: block;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0 auto;
+  max-width: 680px;
+
+  @media (max-width: $breakpoint-lg) {
+    gap: 16px;
+  }
 }

@@ -1,1 +1,21 @@
-auth-slider
+<swiper-container #swiperContainer slides-per-view="1" speed="500" loop="true">
+  @for (item of [].constructor(3); track $index) {
+  <swiper-slide>
+    <div class="slide">
+      <img
+        src="https://picsum.photos/200?random={{ $index + 1 }}"
+        alt="random={{ $index + 1 }}"
+        class="slide-image"
+      />
+      <div class="slide-content">
+        <h2>Random {{ $index + 1 }}</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <ion-button (click)="swiperContainer.swiper.slideNext()" fill="clear">
+          Next
+          <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </swiper-slide>
+  }
+</swiper-container>

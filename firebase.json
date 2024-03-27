@@ -1,5 +1,4 @@
 {
-  "public": "www",
   "hosting": {
     "source": ".",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],

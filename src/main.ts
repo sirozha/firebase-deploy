@@ -31,6 +31,10 @@ import { provideEffects } from '@ngrx/effects';
 import { metaReducers, reducers } from './app/store/reducers';
 import { AuthEffects } from './app/pages/auth/store/auth.effects';
 
+import { register } from 'swiper/element/bundle';
+
+register();
+
 if (environment.production) {
   enableProdMode();
 }
