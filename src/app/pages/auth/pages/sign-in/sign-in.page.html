@@ -1,17 +1,17 @@
-<ion-content class="ion-padding-top">
+<ion-content>
   <ion-grid>
-    <ion-row class="ion-align-items-center ion-justify-content-center">
-      <ion-col size-lg="6" size="12" class="ion-flex ion-direction-column">
+    <ion-row>
+      <ion-col size-lg="6" size="12" class="ion-hide-lg-down">
         <app-auth-teaser></app-auth-teaser>
       </ion-col>
 
       <ion-col
         size-lg="6"
         size="12"
-        class="ion-flex ion-direction-column ion-align-items-center ion-justify-content-center"
+        class="ion-flex ion-direction-column ion-align-items-center ion-padding"
       >
-        <h1>Log In</h1>
-        <form [formGroup]="form" class="form">
+        <h1 class="ion-no-margin">Log In</h1>
+        <form [formGroup]="form" class="form ion-margin-top">
           <ion-item>
             <ion-input
               formControlName="email"
@@ -53,7 +53,7 @@
           <app-auth-socials class="ion-margin-top"></app-auth-socials>
         </form>
       </ion-col>
-      <ion-col size="12" class="ion-flex ion-direction-column">
+      <ion-col size="12" class="ion-padding">
         <app-auth-slider></app-auth-slider>
       </ion-col>
     </ion-row>
