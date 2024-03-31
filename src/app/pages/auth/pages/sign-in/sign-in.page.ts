@@ -6,8 +6,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { NavController } from '@ionic/angular';
 import {
+  NavController,
   IonContent,
   IonHeader,
   IonTitle,
@@ -31,6 +31,7 @@ import { AuthTeaserComponent } from '../../components/auth-teaser/auth-teaser.co
 import { AuthSliderComponent } from '../../components/auth-slider/auth-slider.component';
 import { RouterLink } from '@angular/router';
 import { AuthSocialsComponent } from '../../components/auth-socials/auth-socials.component';
+import { UserServiceMode } from '../../models/user-service.model';
 
 @Component({
   selector: 'app-sign-in',
@@ -64,14 +65,8 @@ export class SignInPage {
   });
 
   signUpUrl = `/${Page.signUp}`;
-
-  constructor(
-    private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private navController: NavController,
-    private toastService: ToastService,
-    private loadingService: LoadingService
-  ) {}
+  userServiceUrl = `/${Page.userService}`;
+  passwordRecoverQueryParams = { mode: UserServiceMode.recoverPassword };
 
   get email(): FormControl {
     return this.form.controls['email'] as FormControl;
@@ -80,6 +75,14 @@ export class SignInPage {
   get password(): FormControl {
     return this.form.controls['password'] as FormControl;
   }
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private navController: NavController,
+    private toastService: ToastService,
+    private loadingService: LoadingService,
+  ) {}
 
   async signIn() {
     if (this.form.invalid) {

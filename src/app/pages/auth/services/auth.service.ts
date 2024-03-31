@@ -3,7 +3,9 @@ import {
   Auth,
   GoogleAuthProvider,
   TwitterAuthProvider,
+  confirmPasswordReset,
   createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -39,6 +41,14 @@ export class AuthService {
 
   signUp(email: string, password: string) {
     return createUserWithEmailAndPassword(this.auth, email, password);
+  }
+
+  sendPasswordResetEmail(email: string) {
+    return sendPasswordResetEmail(this.auth, email);
+  }
+
+  confirmPasswordReset(code: string, password: string) {
+    return confirmPasswordReset(this.auth, code, password);
   }
 
   signOut() {

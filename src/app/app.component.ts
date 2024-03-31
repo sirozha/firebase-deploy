@@ -2,6 +2,7 @@ import { CommonModule, JsonPipe } from '@angular/common';
 import { Component, Signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import {
+  NavController,
   IonApp,
   IonSplitPane,
   IonMenu,
@@ -15,7 +16,6 @@ import {
   IonLabel,
   IonRouterOutlet,
 } from '@ionic/angular/standalone';
-import { NavController } from '@ionic/angular';
 import * as fromApp from './store/reducers';
 import * as AuthActions from './pages/auth/store/auth.actions';
 import { addIcons } from 'ionicons';

@@ -23,7 +23,7 @@ export const routes: Routes = [
     path: 'sign-in',
     loadComponent: () =>
       import('./pages/auth/pages/sign-in/sign-in.page').then(
-        (m) => m.SignInPage
+        (m) => m.SignInPage,
       ),
     ...canActivate(redirectLoggedInToHome),
   },
@@ -31,7 +31,15 @@ export const routes: Routes = [
     path: 'sign-up',
     loadComponent: () =>
       import('./pages/auth/pages/sign-up/sign-up.page').then(
-        (m) => m.SignUpPage
+        (m) => m.SignUpPage,
+      ),
+    ...canActivate(redirectLoggedInToHome),
+  },
+  {
+    path: 'user-service',
+    loadComponent: () =>
+      import('./pages/auth/pages/user-service/user-service.page').then(
+        (m) => m.UserServicePage,
       ),
     ...canActivate(redirectLoggedInToHome),
   },

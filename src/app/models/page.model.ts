@@ -6,6 +6,7 @@ export type Document = DocumentData & { id: string };
 export enum Page {
   signIn = 'sign-in',
   signUp = 'sign-up',
+  userService = 'user-service',
   home = 'home',
   profile = 'profile',
   users = 'users',

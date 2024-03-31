@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { IonButton, IonIcon } from '@ionic/angular/standalone';
+import { NavController, IonButton, IonIcon } from '@ionic/angular/standalone';
 import { AuthService } from '../../services/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { LoadingService } from 'src/app/services/loading.service';

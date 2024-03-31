@@ -6,8 +6,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { NavController } from '@ionic/angular';
 import {
+  NavController,
   IonContent,
   IonHeader,
   IonTitle,
@@ -63,14 +63,6 @@ export class SignUpPage {
 
   signInUrl = `/${Page.signIn}`;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private navController: NavController,
-    private toastService: ToastService,
-    private loadingService: LoadingService
-  ) {}
-
   get email(): FormControl {
     return this.form.controls['email'] as FormControl;
   }
@@ -78,6 +70,14 @@ export class SignUpPage {
   get password(): FormControl {
     return this.form.controls['password'] as FormControl;
   }
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private navController: NavController,
+    private toastService: ToastService,
+    private loadingService: LoadingService
+  ) {}
 
   async signUp() {
     if (this.form.invalid) {
