@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col
+        size-xl="4"
+        size-lg="5"
+        size="12"
+        class="ion-flex ion-direction-column ion-align-items-center ion-padding"
+      >
+        @switch (mode) {
+          @case (modeType.recoverPassword) {
+            <app-password-recover></app-password-recover>
+          }
+          @case (modeType.resetPassword) {
+            <app-password-reset [code]="code"></app-password-reset>
+          }
+        }
+
+        <ion-button
+          [routerLink]="signInUrl"
+          routerDirection="root"
+          class="ion-margin-top"
+          color="primary"
+          fill="clear"
+          size="block"
+        >
+          Log in
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
